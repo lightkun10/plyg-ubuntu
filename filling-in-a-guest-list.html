@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filling in a guest list</title>
+</head>
+<body>
+    <h2>Live output</h2>
+    <div class="output" style="height: 100px;overflow: auto;">
+        <p class="admitted">Admit:</p>
+        <p class="refused">Refuse</p>
+    </div>
+
+
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: '
+
+        for(let i = 0; i < people.length; i++) {
+            if(people[i] === 'Phil' || people[i] === 'Lola') {
+                refused.textContent += people[i] + ', ';
+            } else {
+                admitted.textContent += people[i] + ', ';
+            }
+        }
+
+        refused.textContent = refused.textContent.slice(',', refused.textContent.length - 2) + '.';
+        admitted.textContent = admitted.textContent.slice(',', admitted.textContent.length - 2) + '.';
+
+    </script>
+</body>
+</html>
